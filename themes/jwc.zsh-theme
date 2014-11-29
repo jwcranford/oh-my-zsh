@@ -60,6 +60,6 @@ ${ret_status}%{$fg_bold[blue]%}%5~%{$reset_color%} $(custom_git_prompt_info)
 RPROMPT=
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[cyan]%}[%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg_no_bold[red]%}✗ %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%}*%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[cyan]%}]%{$reset_color%} "
