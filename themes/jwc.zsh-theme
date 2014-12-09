@@ -55,7 +55,7 @@ function parse_git_status() {
 
 PROMPT='
 ${ret_status}%{$fg_bold[blue]%}%5~%{$reset_color%} $(custom_git_prompt_info)
-%{$fg_bold[green]%}%T %! %#%{$reset_color%} '
+%{$fg_no_bold[yellow]%}%T %! %#%{$reset_color%} '
 #RPROMPT='[%T]'
 RPROMPT=
 
