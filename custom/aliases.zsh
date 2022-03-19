@@ -31,6 +31,8 @@ case $ARCH in
                 alias calc='open /Applications/Calculator.app'
 		alias sha1='openssl dgst -sha1'
 		alias md5sum='md5 -r'
+		alias ls='ls -G'
+		alias ll='ls -l'
 
 		# wrappers around md5 for Mac - emulates the -c option of md5sum
 
