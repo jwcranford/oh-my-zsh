@@ -4,13 +4,15 @@ mf() {
 }
 
 watch() {
+	clear
         while true; do
-                clear
+		echo At `date`
                 "$@"
                 sleep 2
+		echo
         done
 }
 
-sort-by-length() {
-        perl -e '@a=<>;print (sort {length($a) <=> length($b)} @a)' $*
+new() {
+	mkdir "$1" && cd "$1"
 }

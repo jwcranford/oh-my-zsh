@@ -3,7 +3,10 @@ alias h=history
 alias v='vim -R -Z'
 alias p="$PAGER"
 alias rm='rm -i'
-alias gitl='git log --graph --name-only'
+alias gitl='git log --graph --name-only --decorate --abbrev-commit'
+alias gpg-verify='gpg -v --verify'
+alias emacs='/Users/jcranford/Applications/Aquamacs.app/Contents/MacOS/Aquamacs'
+alias geany='/Users/jcranford/Applications/Geany.app/Contents/MacOS/geany'
 
 ARCH=`uname`
 case $ARCH in
@@ -31,8 +34,9 @@ case $ARCH in
                 alias calc='open /Applications/Calculator.app'
 		alias sha1='openssl dgst -sha1'
 		alias md5sum='md5 -r'
-		alias ls='ls -G'
+		alias ls='ls -GCF'
 		alias ll='ls -l'
+		alias sha256sum='shasum -a 256'
 
 		# wrappers around md5 for Mac - emulates the -c option of md5sum
 
@@ -46,8 +50,15 @@ function md5-c {
         md5 "$file" | /usr/bin/diff -bw "$1" - && echo Checksum matches
 }
 
+# usage: md5sum-c mdsum.txt file-to-checksum
 function md5sum-c {
-        awk '{print $2}' "$1" | xargs md5 -r | diff -bw "$1" - && echo Checksum matches
+	if [ "$#" = "2" ]; then
+		grep "$2" "$1" > /tmp/$$
+		md5 -r "$2" |diff -bw /tmp/$$ - && echo Checksum matches
+	else
+		echo Usage: md5sum-c mdsum.txt file-to-checksum
+	fi
+        #awk '{print $2}' "$1" | xargs md5 -r | diff -bw "$1" - && echo Checksum matches
 }
 
 function memtotals() {
