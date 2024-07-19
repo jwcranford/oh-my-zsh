@@ -7,6 +7,7 @@ alias gitl='git log --graph --name-only --decorate --abbrev-commit'
 alias gpg-verify='gpg -v --verify'
 alias emacs='/Users/jcranford/Applications/Aquamacs.app/Contents/MacOS/Aquamacs'
 alias geany='/Users/jcranford/Applications/Geany.app/Contents/MacOS/geany'
+alias k=kubectl
 
 ARCH=`uname`
 case $ARCH in
@@ -31,7 +32,7 @@ case $ARCH in
                 alias memusg='ps Ahuc -m |p'
                 alias grep='grep --color'
 #                alias free='top -l 1 1|grep free'
-                alias calc='open /Applications/Calculator.app'
+                alias calc='open /System/Applications/Calculator.app'
 		alias sha1='openssl dgst -sha1'
 		alias md5sum='md5 -r'
 		alias ls='ls -GCF'
