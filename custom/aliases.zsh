@@ -3,11 +3,12 @@ alias h=history
 alias v='vim -R -Z'
 alias p="$PAGER"
 alias rm='rm -i'
-alias gitl='git log --graph --name-only --decorate --abbrev-commit'
+alias gitl='git log --graph --name-only --decorate --abbrev-commit --show-signature'
 alias gpg-verify='gpg -v --verify'
 alias emacs='/Users/jcranford/Applications/Aquamacs.app/Contents/MacOS/Aquamacs'
 alias geany='/Users/jcranford/Applications/Geany.app/Contents/MacOS/geany'
 alias k=kubectl
+alias eksctl='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/eksctl -v ~/.kube:/root/.kube public.ecr.aws/eksctl/eksctl'
 
 ARCH=`uname`
 case $ARCH in
